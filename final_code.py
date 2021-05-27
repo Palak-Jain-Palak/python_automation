@@ -1,6 +1,5 @@
 import os
 import getpass
-import subprocess
 
 
 
@@ -36,43 +35,43 @@ def main1(a):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("date")
+					os.system("date")
 				elif int(ch)==2:
-					subprocess.getoutput("cal")
+					os.system("cal")
 				elif int(ch)==3:
-					subprocess.getoutput("ifconfig enp0s3")
+					os.system("ifconfig enp0s3")
 				elif int(ch)==4:
-					subprocess.getoutput("ping -c 2 goo.gl")
+					os.system("ping -c 2 goo.gl")
 				elif int(ch)==5:
 					a=input("Enter file name : ")
-					subprocess.getoutput("gedit {}".format(a))
+					os.system("gedit {}".format(a))
 				elif int(ch)==6:
 					b=input("Enter file name : ")
-					subprocess.getoutput("vim {}".format(a))
+					os.system("vim {}".format(a))
 				elif int(ch)==7:
-					subprocess.getoutput("firefox")
+					os.system("firefox")
 				elif int(ch)==8:
-					subprocess.getoutput("python3")
+					os.system("python3")
 				elif int(ch)==9:
 					c=input("Enter command : ")
-					subprocess.getoutput("yum whatprovides {}".format(c))
+					os.system("yum whatprovides {}".format(c))
 				elif int(ch)==10:
 					d=input("Enter command : ")
-					subprocess.getoutput("man {}".format(d))
+					os.system("man {}".format(d))
 					print("Press q to exit")
 				elif int(ch)==11:
-					subprocess.getoutput("tcpdump -i enp0s3 -n")
+					os.system("tcpdump -i enp0s3 -n")
 				elif int(ch)==12:
-					subprocess.getoutput("tcpdump -i enp0s3 -n -X")
+					os.system("tcpdump -i enp0s3 -n -X")
 				elif int(ch)==13:
 					e=input("Enter IP : ")
-					subprocess.getoutput("ssh {}".format(e))
+					os.system("ssh {}".format(e))
 				elif int(ch)==14:
 					break
 				else: 
 					print("Enter the valid choice")
 				input("Press any key to continue...")
-				subprocess.getoutput("clear")
+				os.system("clear")
 				
 
 	def remotemenu(b):
@@ -99,25 +98,25 @@ def main1(a):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("ssh {} date".format(ip))
+					os.system("ssh {} date".format(ip))
 				elif int(ch)==2:
-					subprocess.getoutput("ssh {} cal".format(ip))
+					os.system("ssh {} cal".format(ip))
 				elif int(ch)==3:
-					subprocess.getoutput("ssh {} ifconfig".format(ip))
+					os.system("ssh {} ifconfig".format(ip))
 				elif int(ch)==4:
-					subprocess.getoutput("ssh {} ping -c 2 goo.gl".format(ip))
+					os.system("ssh {} ping -c 2 goo.gl".format(ip))
 				elif int(ch)==5:
-					subprocess.getoutput("ssh {} python3".format(ip))
+					os.system("ssh {} python3".format(ip))
 				elif int(ch)==6:
 					break
 				else: 
 					print("Enter the valid choice")
 				input("Press any key to continue...")
-				subprocess.getoutput("clear")	
+				os.system("clear")	
 		
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t\tBASIC LINUX COMMANDS!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 
 
 	while True:
@@ -182,28 +181,28 @@ def main2(b):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("fdisk -l")
+					os.system("fdisk -l")
 				elif int(ch)==2:
 					a=input("Enter the device to make partition : ")
-					subprocess.getoutput("fdisk {}".format(a))
+					os.system("fdisk {}".format(a))
 				elif int(ch)==3:
-					subprocess.getoutput("udevadm settle")
+					os.system("udevadm settle")
 					print("\n")
 					print("\t\t\tDriver loaded successfully")
 				elif int(ch)==4:
 					b=input("Enter the device/partition to format : ")
-					subprocess.getoutput("mkfs.ext4 {}".format(b))
+					os.system("mkfs.ext4 {}".format(b))
 				elif int(ch)==5:
 					c=input("Enter the device/partition : ")
 					e=input("Create folder/directory to mount: ")
 					d=input("Enter the folder created to mount : ")
-					subprocess.getoutput("mkdir {}".format(e))
-					subprocess.getoutput("mount {0} {1}".format(c,d))
+					os.system("mkdir {}".format(e))
+					os.system("mount {0} {1}".format(c,d))
 				elif int(ch)==6:
-					subprocess.getoutput("df -hT")
+					os.system("df -hT")
 				elif int(ch)==7:
 					f=input("Enter the folder to unmount : ")
-					subprocess.getoutput("umount {}".format(f))
+					os.system("umount {}".format(f))
 				elif int(ch)==8:
 					break
 				else: 
@@ -211,9 +210,9 @@ def main2(b):
 					
 				
 			
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t\t  PARTITION CONCEPT!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t---------------------------------------")
 		print("""	
@@ -260,44 +259,44 @@ def lvm(a):
 			print(ch)
 
 			if int(ch)==1:
-				subprocess.getoutput("fdisk -l")
+				os.system("fdisk -l")
 			elif int(ch)==2:
 				a=input("Write your device names : ")
-				subprocess.getoutput("pvcreate {}".format(a))
+				os.system("pvcreate {}".format(a))
 			elif int(ch)==3:
 				x=input("Give your PV name : ")
-				subprocess.getoutput("pvdisplay {}".format(x))
+				os.system("pvdisplay {}".format(x))
 			elif int(ch)==4:
 				b=input("Give Group name : ")
 				c=input("Write your device names : ")
-				subprocess.getoutput("vgcreate {0} {1}".format(b,c))
+				os.system("vgcreate {0} {1}".format(b,c))
 			elif int(ch)==5:
 				d=input("Write Group name : ")
-				subprocess.getoutput("vgdisplay {}".format(d))
+				os.system("vgdisplay {}".format(d))
 			elif int(ch)==6:
 				e=input("Give the size for logical volume : ")
 				f=input("Give the name for your lv : ")
 				g=input("Write the VG name from which you want to create LV :")
-				subprocess.getoutput("lvcreate --size {0} --name {1} {2}".format(e,f,g))
+				os.system("lvcreate --size {0} --name {1} {2}".format(e,f,g))
 			elif int(ch)==7:
 				h=input("Give VG/LV name : ")
-				subprocess.getoutput("lvdisplay {}".format(h))
+				os.system("lvdisplay {}".format(h))
 			elif int(ch)==8:
 				i=input("Provide device name to format : ")
-				subprocess.getoutput("mkfs.ext4 {}".format(i))
+				os.system("mkfs.ext4 {}".format(i))
 				print("\t\t\tDevice formatted Successfully")
 			elif int(ch)==9:
 				j=input("Create folder/directory to mount: ")
-				subprocess.getoutput("mkdir {}".format(j))
+				os.system("mkdir {}".format(j))
 				k=input("Enter the device/partition : ")
 				l=input("Enter created folder to mount on : ")
-				subprocess.getoutput("mount {0} {1}".format(k,l))
+				os.system("mount {0} {1}".format(k,l))
 				
 			elif int(ch)==10:
-				subprocess.getoutput("df -hT")
+				os.system("df -hT")
 			elif int(ch)==11:
 				f=input("Enter the folder to unmount : ")
-				subprocess.getoutput("umount {}".format(f))
+				os.system("umount {}".format(f))
 			elif int(ch)==12:
 				break
 			else: 
@@ -327,23 +326,23 @@ def main3(c):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("lsblk")
+					os.system("lsblk")
 					print("\n")
-					subprocess.getoutput("df -hT")
+					os.system("df -hT")
 				elif int(ch)==2:
 					a=input("Give VG name : ")
-					subprocess.getoutput("vgdisplay {}".format(a))
+					os.system("vgdisplay {}".format(a))
 				elif int(ch)==3:
 					b=input("Give the size to extend (+size) : ")
 					c=input("Give the device name : ")
-					subprocess.getoutput("lvextend --size {0} {1}".format(b,c))
+					os.system("lvextend --size {0} {1}".format(b,c))
 					print("After extending lv we have to format the extended part to use it")
 					d=input("Enter device name : ")
-					subprocess.getoutput("resize2fs {}".format(d))
+					os.system("resize2fs {}".format(d))
 				elif int(ch)==4:
 					e=input("Give VG name to extend : ")
 					f=input("Provide new Physical Volume : ")
-					subprocess.getoutput("vgextend {0} {1}".format(e,f))
+					os.system("vgextend {0} {1}".format(e,f))
 				elif int(ch)==5:
 					print("Steps to follow")
 					print("""	
@@ -355,18 +354,18 @@ def main3(c):
 					5 : mount (online)
 					""")
 					g=input("1]Enter folder to unmount: ")
-					subprocess.getoutput("umount {}".format(g))
+					os.system("umount {}".format(g))
 					h=input("2]Enter device name to clean/scan : ")
-					subprocess.getoutput("e2fsck -f {}".format(h))
+					os.system("e2fsck -f {}".format(h))
 					i=input("3]Enter device name to format(online) : ")
 					j=input("Give the size upto you want to keep to format : ")
-					subprocess.getoutput("resize2fs {0} {1}".format(i,j))
+					os.system("resize2fs {0} {1}".format(i,j))
 					k=input("4]Give the size to reduce : ")
 					l=input("Give the device name : ")
-					subprocess.getoutput("lvreduce --size {0} {1}".format(k,l))
+					os.system("lvreduce --size {0} {1}".format(k,l))
 					m=input("5]Enter device name to mount : ")
 					n=input("Enter the folder/directory to mount on: ")
-					subprocess.getoutput("mount {0} {1}".format(m,n))
+					os.system("mount {0} {1}".format(m,n))
 				elif int(ch)==6:
 					break					
 
@@ -374,9 +373,9 @@ def main3(c):
 					print("Enter the valid choice")
 
 
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t-------LOGICAL VOLUME MANAGEMENT-------")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t---------------------------------------")
 		print("""	
@@ -418,12 +417,12 @@ def main4(d):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("java -version")
-					subprocess.getoutput("hadoop version")
+					os.system("java -version")
+					os.system("hadoop version")
 				elif int(ch)==2:
-					subprocess.getoutput("rpm -ivh jdk-8u171-linux-x64.rpm")
+					os.system("rpm -ivh jdk-8u171-linux-x64.rpm")
 				elif int(ch)==3:
-					subprocess.getoutput("rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force")
+					os.system("rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force")
 				elif int(ch)==4:
 					break
 				else: 
@@ -457,25 +456,25 @@ def main4(d):
 
 				if int(ch)==1:
 					a=input("Give directory name : ")
-					subprocess.getoutput("mkdir /{}".format(a))
+					os.system("mkdir /{}".format(a))
 				elif int(ch)==2:
-					subprocess.getoutput("vim /etc/hadoop/hdfs-site.xml")
+					os.system("vim /etc/hadoop/hdfs-site.xml")
 				elif int(ch)==3:
-					subprocess.getoutput("vim /etc/hadoop/core-site.xml")
+					os.system("vim /etc/hadoop/core-site.xml")
 				elif int(ch)==4:
-					subprocess.getoutput("hadoop namenode -format")
+					os.system("hadoop namenode -format")
 				elif int(ch)==5:
-					subprocess.getoutput("hadoop-daemon.sh start namenode")
+					os.system("hadoop-daemon.sh start namenode")
 				elif int(ch)==6:
-					subprocess.getoutput("jps")
+					os.system("jps")
 				elif int(ch)==7:
-					subprocess.getoutput("netstat -tnlp")
+					os.system("netstat -tnlp")
 				elif int(ch)==8:
-					subprocess.getoutput("hadoop dfsadmin -report")
+					os.system("hadoop dfsadmin -report")
 				elif int(ch)==9:
-					subprocess.getoutput("hadoop-daemon.sh stop namenode")
+					os.system("hadoop-daemon.sh stop namenode")
 				elif int(ch)==10:
-					subprocess.getoutput("systemctl stop firewall")
+					os.system("systemctl stop firewall")
 				elif int(ch)==11:
 					break
 				else: 
@@ -510,23 +509,23 @@ def main4(d):
 
 				if int(ch)==1:
 					a=input("Give directory name : ")
-					subprocess.getoutput("mkdir /{}".format(a))
+					os.system("mkdir /{}".format(a))
 				elif int(ch)==2:
-					subprocess.getoutput("vim /etc/hadoop/hdfs-site.xml")
+					os.system("vim /etc/hadoop/hdfs-site.xml")
 				elif int(ch)==3:
-					subprocess.getoutput("vim /etc/hadoop/core-site.xml")
+					os.system("vim /etc/hadoop/core-site.xml")
 				elif int(ch)==4:
-					subprocess.getoutput("hadoop-daemon.sh start datanode")
+					os.system("hadoop-daemon.sh start datanode")
 				elif int(ch)==5:
-					subprocess.getoutput("jps")
+					os.system("jps")
 				elif int(ch)==6:
-					subprocess.getoutput("netstat -tnlp")
+					os.system("netstat -tnlp")
 				elif int(ch)==7:
-					subprocess.getoutput("hadoop dfsadmin -report")
+					os.system("hadoop dfsadmin -report")
 				elif int(ch)==8:
-					subprocess.getoutput("hadoop-daemon.sh stop datanode")
+					os.system("hadoop-daemon.sh stop datanode")
 				elif int(ch)==9:
-					subprocess.getoutput("systemctl stop firewall")
+					os.system("systemctl stop firewall")
 				elif int(ch)==10:
 					break
 				else: 
@@ -558,30 +557,30 @@ def main4(d):
 
 
 				if int(ch)==1:
-					subprocess.getoutput("vim /etc/hadoop/core-site.xml")
+					os.system("vim /etc/hadoop/core-site.xml")
 				elif int(ch)==2:
-					subprocess.getoutput("hadoop fs -ls /")
+					os.system("hadoop fs -ls /")
 				elif int(ch)==3:
 					a=input("Enter file to upload : ")
-					subprocess.getoutput("hadoop fs -put {} /".format(a))
+					os.system("hadoop fs -put {} /".format(a))
 				elif int(ch)==4:
 					b=input("Enter file to read : ")
-					subprocess.getoutput("hadoop fs -cat /{}".format(b))
+					os.system("hadoop fs -cat /{}".format(b))
 				elif int(ch)==5:
 					c=input("Enter file to remove : ")
-					subprocess.getoutput("hadoop fs -rm /{}".format(c))
+					os.system("hadoop fs -rm /{}".format(c))
 				elif int(ch)==6:
 					c=input("Enter filename to create : ")
-					subprocess.getoutput("hadoop fs -touchz /{}".format(c))
+					os.system("hadoop fs -touchz /{}".format(c))
 				elif int(ch)==7:
 					break
 				else: 
 					print("Enter the valid choice")
 					
 		
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t\t  BIG DATA HADOOP!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t---------------------------------------")
 		print("""	
@@ -632,19 +631,19 @@ def main5(e):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("yum list docker-ce")			
+					os.system("yum list docker-ce")			
 				elif int(ch)==2:
-					subprocess.getoutput("yum install docker-ce  --nobest")
+					os.system("yum install docker-ce  --nobest")
 				elif int(ch)==3:
-					subprocess.getoutput("systemctl start docker")
+					os.system("systemctl start docker")
 				elif int(ch)==4:
-					subprocess.getoutput("systemctl status docker")
+					os.system("systemctl status docker")
 				elif int(ch)==5:
-					subprocess.getoutput("systemctl stop docker")
+					os.system("systemctl stop docker")
 				elif int(ch)==6:
-					subprocess.getoutput("docker info")
+					os.system("docker info")
 				elif int(ch)==7:
-					subprocess.getoutput("docker --help")	
+					os.system("docker --help")	
 				elif int(ch)==8:
 					break
 				else: 
@@ -680,42 +679,42 @@ def main5(e):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("docker images")
+					os.system("docker images")
 
 				elif int(ch)==2:
 					a=input("Enter the OS image name to Search : ")
-					subprocess.getoutput("docker search {}".format(a))
+					os.system("docker search {}".format(a))
 				elif int(ch)==3:
 					b=input("Enter the OS image : ")			
 					c=input("Enter the version : ")
-					subprocess.getoutput("docker pull {0}:{1}".format(b,c))
+					os.system("docker pull {0}:{1}".format(b,c))
 				elif int(ch)==4:
-					subprocess.getoutput("docker ps -a")
+					os.system("docker ps -a")
 				elif int(ch)==5:
 					e=input("Give a name to new container : ")			
 					f=input("Enter image : ")
 					g=input("Enter the version : ")
-					subprocess.getoutput("docker run -it --name {0} {1}:{2}".format(e,f,g))
+					os.system("docker run -it --name {0} {1}:{2}".format(e,f,g))
 				elif int(ch)==6:
 					h=input("Enter the OS name to start : ")
-					subprocess.getoutput("docker start {}".format(h))	
+					os.system("docker start {}".format(h))	
 				elif int(ch)==7:
 					h=input("Enter the OS name to attach : ")
-					subprocess.getoutput("docker attach {}".format(h))	
+					os.system("docker attach {}".format(h))	
 				elif int(ch)==8:
 					h=input("Enter the OS name to stop : ")
-					subprocess.getoutput("docker stop {}".format(h))
+					os.system("docker stop {}".format(h))
 				elif int(ch)==9:
-					subprocess.getoutput("docker rm `docker ps -a -q`")
+					os.system("docker rm `docker ps -a -q`")
 				elif int(ch)==10:
-					subprocess.getoutput("docker ps -a -q")	
+					os.system("docker ps -a -q")	
 				elif int(ch)==11:
 					i=input("Enter the OS name to remove : ")
-					subprocess.getoutput("docker rm -f {}".format(i))
+					os.system("docker rm -f {}".format(i))
 				elif int(ch)==12:
 					j=input("Enter the image name to remove : ")
 					k=input("Enter the version : ")
-					subprocess.getoutput("docker rmi -f {0}:{1}".format(j,k))	
+					os.system("docker rmi -f {0}:{1}".format(j,k))	
 				elif int(ch)==13:
 					break
 				else: 
@@ -723,9 +722,9 @@ def main5(e):
 
 					
 		
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t\tCONTAINERIZATION TECHNOLOGY!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t---------------------------------------")
 		print("""	
@@ -775,26 +774,26 @@ def main6(f):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("pip3 install ansible")			
+					os.system("pip3 install ansible")			
 				elif int(ch)==2:
-					subprocess.getoutput("ansible --version")
+					os.system("ansible --version")
 				elif int(ch)==3:
-					subprocess.getoutput("ansible all --list-hosts")
+					os.system("ansible all --list-hosts")
 				elif int(ch)==4:
-					subprocess.getoutput("vim /etc/ansible/ansible.cfg")
+					os.system("vim /etc/ansible/ansible.cfg")
 				elif int(ch)==5:
-					subprocess.getoutput("gedit /root/ip.txt")
+					os.system("gedit /root/ip.txt")
 				elif int(ch)==6:
-					subprocess.getoutput("ansible all -m ping")
+					os.system("ansible all -m ping")
 				elif int(ch)==7:
 					break
 				else: 
 					print("Enter the valid choice")
 					
 			
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t\t     ANSIBLE!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t------------------------------------")
 		print("""	
@@ -835,11 +834,11 @@ def main7(g):
 				print(ch)
 
 				if int(ch)==1:
-					subprocess.getoutput("aws --version")			
+					os.system("aws --version")			
 				elif int(ch)==2:
-					subprocess.getoutput("aws configure")
+					os.system("aws configure")
 				elif int(ch)==3:
-					subprocess.getoutput("aws help")
+					os.system("aws help")
 				elif int(ch)==4:
 					break
 				else: 
@@ -875,44 +874,44 @@ def main7(g):
 				print(ch)
 
 				if int(ch)==0:
-					subprocess.getoutput("aws ec2 help")			
+					os.system("aws ec2 help")			
 				elif int(ch)==1:
 					i=input("Provide instance id : ")
-					subprocess.getoutput("aws ec2 describe-instances --instance-ids   {}".format(i))
+					os.system("aws ec2 describe-instances --instance-ids   {}".format(i))
 				elif int(ch)==2:
 					a=input("Enter unique key name : ")
-					subprocess.getoutput("aws ec2 create-key-pair --key-name  {}".format(a))
+					os.system("aws ec2 create-key-pair --key-name  {}".format(a))
 				elif int(ch)==3:
 					k=input("Enter key name : ")
-					subprocess.getoutput("aws ec2 describe-key-pairs --key-names {}".format(k))				
+					os.system("aws ec2 describe-key-pairs --key-names {}".format(k))				
 				elif int(ch)==4:
 					l=input("Enter key name : ")
 					m=input("How many instances you want : ")
-					subprocess.getoutput("aws ec2 run-instances --image-id ami-0e306788ff2473ccb --instance-type t2.micro --key-name {} --count {}".format(l,m))
+					os.system("aws ec2 run-instances --image-id ami-0e306788ff2473ccb --instance-type t2.micro --key-name {} --count {}".format(l,m))
 				elif int(ch)==5:
 					p=input("Enter group id : ")
-					subprocess.getoutput("aws ec2 describe-security-groups  --group-ids {}".format(k))
+					os.system("aws ec2 describe-security-groups  --group-ids {}".format(k))
 				elif int(ch)==6:
 					n=input("Enter description : ")
 					o=input("Enter group name : ")
-					subprocess.getoutput("aws ec2 create-security-group --description {} --group-name {}".format(n,m))
+					os.system("aws ec2 create-security-group --description {} --group-name {}".format(n,m))
 				elif int(ch)==7:
 					n=input("Provide availability zone : ")
 					o=input("Enter Size : ")
-					subprocess.getoutput("aws ec2 create-volume --availability-zone {} --volume-type gp2 --size {}".format(n,m))
+					os.system("aws ec2 create-volume --availability-zone {} --volume-type gp2 --size {}".format(n,m))
 				elif int(ch)==8:
 					q=input("Enter instance id : ")
 					r=input("Enter volume id : ")
 					s=input("Enter device : ")
-					subprocess.getoutput("aws ec2 attach-volume --instance-id {} --volume-id {} --device {}".format(q,r,s))
+					os.system("aws ec2 attach-volume --instance-id {} --volume-id {} --device {}".format(q,r,s))
 				elif int(ch)==9:
 					break
 				else: 
 					print("Enter the valid choice")
 			
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t  AWS-CLI AUTOMATION USING PYTHON!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t------------------------------------")
 		print("""	
@@ -960,30 +959,30 @@ def main8(h):
 				print(ch)
 
 				if int(ch)==0:
-					subprocess.getoutput("yum list httpd")			
+					os.system("yum list httpd")			
 				elif int(ch)==1:
-					subprocess.getoutput("yum install httpd")
+					os.system("yum install httpd")
 				elif int(ch)==2:
 					a=input("create html file : ")
-					subprocess.getoutput("gedit {}".format(a))
+					os.system("gedit {}".format(a))
 				elif int(ch)==3:
 					b=input("Enter the html file you have created : ")
-					subprocess.getoutput("mv {} /var/www/html".format(b))
+					os.system("mv {} /var/www/html".format(b))
 				elif int(ch)==4:
-					subprocess.getoutput("systemctl start httpd")
+					os.system("systemctl start httpd")
 				elif int(ch)==5:
-					subprocess.getoutput("systemctl status httpd")
+					os.system("systemctl status httpd")
 				elif int(ch)==6:
-					subprocess.getoutput("systemctl stop httpd")
+					os.system("systemctl stop httpd")
 				elif int(ch)==7:
 					break
 				else: 
 					print("Enter the valid choice")
 					
 			
-	subprocess.getoutput("tput setaf 3")								
+	os.system("tput setaf 3")								
 	print("\t\t CONFIGURE APACHE httpd WEBSERVER!!")
-	subprocess.getoutput("tput setaf 7")
+	os.system("tput setaf 7")
 	while True:
 		print("\t\t------------------------------------")
 		print("""	
@@ -1002,10 +1001,10 @@ def main8(h):
 
 
 while True:
-		subprocess.getoutput("tput setaf 3")		
+		os.system("tput setaf 3")		
 		print("\n")						
 		print("\t ===============WELCOME TO AUTOMATION WORLD!!===================")
-		subprocess.getoutput("tput setaf 7")
+		os.system("tput setaf 7")
 		print("\t\t  ---------------------------------------")
 		print("""	
 		\n
